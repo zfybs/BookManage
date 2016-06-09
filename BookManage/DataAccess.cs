@@ -56,7 +56,7 @@ namespace BookManage
         {
             using (SqlConnection con = new SqlConnection(ConnectString))//创建数据库连接对象
             {
-                SqlDataAdapter adapter = new SqlDataAdapter(sql,con);//创建适配器对象
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, con);//创建适配器对象
                 DataSet ds = new DataSet();//创建数据集对象
                 try
                 {
@@ -65,7 +65,7 @@ namespace BookManage
                 }
                 catch (SqlException ex)
                 {
-                    
+
                     throw new Exception(ex.Message);
                 }
             }
@@ -95,9 +95,7 @@ namespace BookManage
 
                     throw new Exception(ex.Message);
                 }
-
             }
-
         }
         /// <summary>
         /// 更新数据
@@ -127,14 +125,13 @@ namespace BookManage
                     throw new Exception(ex.Message);
                 }
             }
-
         }
         /// <summary>
         /// 根据数据集和sql语句更新数据库
         /// </summary>
         /// <param name="ds"></param>
         /// <param name="sql"></param>
-        public static void UpdateDataSet(DataSet ds,string sql)
+        public static void UpdateDataSet(DataSet ds, string sql)
         {
             using (SqlConnection con = new SqlConnection(ConnectString))
             {
@@ -151,7 +148,7 @@ namespace BookManage
                     throw new Exception(ex.Message);
                 }
             }
-        
+
         }
     }
 }
